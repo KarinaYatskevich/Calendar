@@ -1,0 +1,167 @@
+@import "zeroing_out.scss";
+
+$main-color: rgba(247, 173, 224, 0.699);
+$white: white;
+$main-color-2: black;
+$background-color: rgb(253, 251, 224);
+
+$border-radius: 15px;
+$font-size-top: 60px;
+$sircle-size: 20px;
+
+.rings, .weekdays div {
+    align-self: center;
+    justify-self: center;
+}
+
+main, .year, .month{
+    place-content: center center;
+}
+
+html{
+    font-size: 60%;
+}
+main{
+    width: 100%;
+    height: 100%;
+    background-color: $background-color;
+    display: grid;
+}
+
+.top{
+    display: grid;
+    grid-template-columns: 25% 75%;
+    width: 480px;
+    height: 272px;
+    border-radius: $border-radius;
+    overflow: hidden;
+
+    i{
+        font-size: 2.5rem;
+        cursor: pointer;
+        color: $white;
+
+        &.right{
+            text-align: right;
+            margin: 0px -25px 0 0;
+        }
+
+        &.left{
+            padding: 0 0 0 10px;
+        }        
+    }
+
+    .year{
+        display: grid;
+        background-color: $main-color-2;
+    
+        p{
+            color: $main-color;
+            font-size: $font-size-top;
+            transform: rotate(-90deg);
+        }
+    }
+
+    .month{
+        display: grid;
+        background-color: $main-color;
+
+        p{
+            color: $main-color-2;
+            font-size: $font-size-top;
+            text-transform: uppercase;
+        }
+    } 
+}
+
+.center{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    position: relative;
+} 
+
+.rings{
+    display: grid;
+}
+
+.top-circle{
+    background-color: $background-color;
+    border-radius: $border-radius;
+    width: $sircle-size;
+    height: $sircle-size;
+    margin-top: -30px;
+} 
+
+.strip {
+    background-color: $main-color-2;
+    border-radius: $border-radius;
+    width: $border-radius;
+    height: $font-size-top;
+    margin: -25px 0 -50px 3px; 
+    position: relative;
+}
+
+.bottom-circle {
+    background-color: $background-color;
+    border-radius: $border-radius;
+    width: $sircle-size;
+    height: $sircle-size;
+    margin: 20px 0 -50px 0; 
+    
+}
+
+.bottom {
+    display: grid;
+    grid-template-rows: 0.7fr 2fr;
+    width: 480px;
+    height: 300px;
+    border-radius: $border-radius;
+    overflow: hidden;
+    padding-top: 10px;
+}
+
+.weekdays {
+    border-radius: 15px 15px 0 0;
+    background-color: $main-color;
+    padding-top: 35px;
+    justify-content: center;
+    color: $main-color-2  ;
+    display: flex;
+    flex-wrap: wrap;
+
+    div{
+        font-size: $sircle-size;
+        width: calc(40.2rem / 6);
+        display: flex;
+    }
+}
+
+.days{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: $white;
+
+    div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: $sircle-size;
+        width: calc(40.2rem / 6);
+
+        &:hover:not(.today){
+            background-color: $white;
+            border: 2px solid $main-color;
+            cursor: pointer;
+        }
+    }
+}
+
+.prev-date,
+.next-date {
+    opacity: 0.5;
+}
+
+.today {
+    background-color: $main-color;
+}

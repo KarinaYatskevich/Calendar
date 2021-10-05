@@ -1,0 +1,215 @@
+@charset "UTF-8";
+/*Обнуление*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0; }
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+:focus, :active {
+  outline: none; }
+
+a:focus, a:active {
+  outline: none; }
+
+nav, footer, header, aside {
+  display: block; }
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%; }
+
+input, button, textarea {
+  font-family: inherit; }
+
+input::-ms-clear {
+  display: none; }
+
+button {
+  cursor: pointer; }
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0; }
+
+a, a:visited {
+  text-decoration: none; }
+
+a:hover {
+  text-decoration: none; }
+
+ul li {
+  list-style: none; }
+
+img {
+  vertical-align: top; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit; }
+
+/*--------------------*/
+.rings, .weekdays div {
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  align-self: center;
+  -ms-grid-column-align: center;
+  justify-self: center; }
+
+main, .year, .month {
+  place-content: center center; }
+
+html {
+  font-size: 60%; }
+
+main {
+  width: 100%;
+  height: 100%;
+  background-color: #fdfbe0;
+  display: -ms-grid;
+  display: grid; }
+
+.top {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 25% 75%;
+  grid-template-columns: 25% 75%;
+  width: 480px;
+  height: 272px;
+  border-radius: 15px;
+  overflow: hidden; }
+  .top i {
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: white; }
+    .top i.right {
+      text-align: right;
+      margin: 0px -25px 0 0; }
+    .top i.left {
+      padding: 0 0 0 10px; }
+  .top .year {
+    display: -ms-grid;
+    display: grid;
+    background-color: black; }
+    .top .year p {
+      color: rgba(247, 173, 224, 0.699);
+      font-size: 60px;
+      -webkit-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+      transform: rotate(-90deg); }
+  .top .month {
+    display: -ms-grid;
+    display: grid;
+    background-color: rgba(247, 173, 224, 0.699); }
+    .top .month p {
+      color: black;
+      font-size: 60px;
+      text-transform: uppercase; }
+
+.center {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[6];
+  grid-template-columns: repeat(6, 1fr);
+  position: relative; }
+
+.rings {
+  display: -ms-grid;
+  display: grid; }
+
+.top-circle {
+  background-color: #fdfbe0;
+  border-radius: 15px;
+  width: 20px;
+  height: 20px;
+  margin-top: -30px; }
+
+.strip {
+  background-color: black;
+  border-radius: 15px;
+  width: 15px;
+  height: 60px;
+  margin: -25px 0 -50px 3px;
+  position: relative; }
+
+.bottom-circle {
+  background-color: #fdfbe0;
+  border-radius: 15px;
+  width: 20px;
+  height: 20px;
+  margin: 20px 0 -50px 0; }
+
+.bottom {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 0.7fr 2fr;
+  grid-template-rows: 0.7fr 2fr;
+  width: 480px;
+  height: 300px;
+  border-radius: 15px;
+  overflow: hidden;
+  padding-top: 10px; }
+
+.weekdays {
+  border-radius: 15px 15px 0 0;
+  background-color: rgba(247, 173, 224, 0.699);
+  padding-top: 35px;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
+  .weekdays div {
+    font-size: 20px;
+    width: calc(40.2rem / 6);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+
+.days {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background-color: white; }
+  .days div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 20px;
+    width: calc(40.2rem / 6); }
+    .days div:hover:not(.today) {
+      background-color: white;
+      border: 2px solid rgba(247, 173, 224, 0.699);
+      cursor: pointer; }
+
+.prev-date,
+.next-date {
+  opacity: 0.5; }
+
+.today {
+  background-color: rgba(247, 173, 224, 0.699); }
