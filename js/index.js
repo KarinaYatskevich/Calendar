@@ -1,33 +1,38 @@
-const date = new Date();
+var date = new Date();
 
-const renderCalendar = () => {
+var renderCalendar = () => {
     date.setDate(1);
 
-    const monthDays = document.querySelector(".days");
+    var monthDays = document.getElementById("days");
 
-    const firstDayIndex = date.getDay();
+//порядковый номер первого числа месяца
+    var firstDayIndex = date.getDay();
 
-    const lastDay = new Date(
+//последний день текущего месяца
+    var lastDay = new Date( 
         date.getFullYear(),
         date.getMonth() + 1,
         0
     ).getDate();
-
-    const prevLastDay = new Date(
+    
+//последний день предыдыдущего месяца 
+    var prevLastDay = new Date(
         date.getFullYear(),
         date.getMonth(),
         0
     ).getDate();
 
-    const lastDayIndex = new Date(
+//индекс последнего дня текущего месяца
+    var lastDayIndex = new Date(
         date.getFullYear(),
         date.getMonth() + 1,
         0
     ).getDay();
 
-    const nextDays = 7 - lastDayIndex - 1;
+//количество дней следующего месяца
+    var nextDays = 7 - lastDayIndex - 1;
 
-    const months = [
+    var months = [
         "January",
         "February",
         "March",
@@ -44,15 +49,15 @@ const renderCalendar = () => {
 
     document.getElementById("month").innerHTML = months[date.getMonth()];
 
-    document.getElementById("year").innerHTML = new Date().getFullYear();
+    document.getElementById("year").innerHTML = date.getFullYear();
 
-    let days = "";
+    var days = "";
 
-    for (let x = firstDayIndex; x > 0; x--) {
+    for (var x = firstDayIndex; x > 0; x--) { //Декремент -- уменьшает переменную на 1. Работает как counter = counter - 1
         days += `<div class="prev-date">${prevLastDay - x + 1}</div>`;
     }
 
-    for (let i = 1; i <= lastDay; i++) {
+    for (var i = 1; i <= lastDay; i++) { //i++ -это постинкремент, который возвращает исходное значение.
         if (
         i === new Date().getDate() &&
         date.getMonth() === new Date().getMonth()
@@ -63,18 +68,18 @@ const renderCalendar = () => {
         }
     }
 
-    for (let j = 1; j <= nextDays; j++) {
+    for (var j = 1; j <= nextDays; j++) {
         days += `<div class="next-date">${j}</div>`;
         monthDays.innerHTML = days;
     }
     };
 
-    document.querySelector(".prev").addEventListener("click", () => {
+    document.getElementById("prev").addEventListener("click", () => {
     date.setMonth(date.getMonth() - 1);
     renderCalendar();
     });
 
-    document.querySelector(".next").addEventListener("click", () => {
+    document.getElementById("next").addEventListener("click", () => {
     date.setMonth(date.getMonth() + 1);
     renderCalendar();
     });

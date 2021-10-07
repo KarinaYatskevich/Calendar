@@ -1,6 +1,4 @@
 *prepros-6.config
 
-*.kit
-*scss
+*.html
 *.css
-!style.css
