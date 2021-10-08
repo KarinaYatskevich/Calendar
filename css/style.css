@@ -202,11 +202,12 @@ main {
     -ms-flex-align: center;
     align-items: center;
     font-size: 20px;
-    width: calc(40.2rem / 6); }
+    width: calc(40.2rem / 6);
+    border: 1px solid transparent; }
     .days div:hover:not(.today) {
       background-color: white;
-      border: 1px solid rgba(247, 173, 224, 0.699);
-      cursor: pointer; }
+      cursor: pointer;
+      border-color: rgba(247, 173, 224, 0.699); }
 
 .prev-date,
 .next-date {

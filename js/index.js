@@ -14,7 +14,7 @@ var renderCalendar = () => {
         date.getMonth() + 1,
         0
     ).getDate();
-    
+
 //последний день предыдыдущего месяца 
     var prevLastDay = new Date(
         date.getFullYear(),
@@ -85,3 +85,5 @@ var renderCalendar = () => {
     });
 
     renderCalendar();
+
+
