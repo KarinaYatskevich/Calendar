@@ -1,6 +1,6 @@
-import renderYear from '../modules/year.js';
-import renderMonth from '../modules/currentMonth.js';
-import renderAllDays from '../modules/allDays.js';
+import renderYear from '../modules/renderYear.js';
+import renderMonth from '../modules/renderMonth.js';
+import renderAllDays from '../modules/renderAllDays.js';
 
 const prevElement = document.getElementById("prev");
 const nextElement = document.getElementById("next");
